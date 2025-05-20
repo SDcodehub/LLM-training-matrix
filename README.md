@@ -25,7 +25,7 @@ In summary, "train step timing in s" is a direct measure from NeMo indicating th
 
 
 
-
+```bash
 take following as the config file for the training
 
 _partial_: true
@@ -301,7 +301,7 @@ virtual_pipeline_model_parallel_size: null
 use_distributed_sampler: false
 
 val_check_interval: 10000
-
+```
 
 
 now explain me how the step size is dependent on the global size, I have give n 87 GPUS, where are my GPUs consumed.
