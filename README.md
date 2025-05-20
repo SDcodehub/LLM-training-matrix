@@ -411,6 +411,7 @@ Alternatively, and more commonly, you would increase the global_batch_size propo
 
 
 ---
+![iamge_one](img1.png)
 
 in same context, can you explain each of the following charts
 
@@ -494,7 +495,7 @@ These charts provide valuable insights into your training dynamics. The key is t
 
 
 ---
-
+![iamge_2](img2.png)
 please correct purple is the bf16 and other 2 are fp8.
 
 
@@ -640,7 +641,7 @@ So, it's not that the peak isn't "registered" – it is registered by the underl
 
 
 ---
-
+![iamge_3](img3.png)
 give the bf16 have completed the 574 step, fp8 one completed 740 and another 732, can you help me calculate the consumed samples, we should be able to do with the batch size, sequence and steps?
 
 
@@ -750,8 +751,8 @@ d.  Training: When training starts, the data loader feeds batches of these 8192-
 
 In essence:
 "Consumed samples" tells you how many 8192-token chunks, derived from the concatenation and processing of all the text in your specified data files, have been used for training the model. Each of these samples represents a continuous segment of text (or packed segments) from your original dataset, formatted to the exact input length your model expects.
-
-
+---
+![iamge_4](img4.png)
 
 
 
@@ -810,8 +811,8 @@ It helps you monitor the "health" of the training process.
 The initial decrease and stabilization are good signs.
 The later spikes, especially the very sharp one in an FP8 run, suggest periods of less stable training or the model making large adjustments. While not necessarily catastrophic (as the loss was still going down), these are events to note. If such spikes were much larger or more frequent, they could derail training.
 Comparing the grad_norm between different runs (like FP8 vs. BF16) helps you understand if a particular setting is leading to more or less stable gradient behavior.
-
-
+---
+![iamge_5](img5.png)
 
 
 
@@ -926,6 +927,7 @@ The significantly higher MFU for BF16 (63.2%) compared to FP8 (40.9%) in my illu
 
 
 ---
+![iamge_6](img6.png)
 what is this memory?
 
 
@@ -980,7 +982,7 @@ This chart provides another dimension to understanding your training job's re---
 
 
 ---
-
+![iamge_7](img7.png)
 can you explain me the 2 charts, allocated means ? all GPU memory should be allocated memory, right?
 
 
@@ -1055,6 +1057,7 @@ Process GPU Time Spent Accessing Memory (%) shows all runs have a significant de
 
 
 ---
+![iamge_8](img8.png)
 explain these
 
 
@@ -1128,6 +1131,7 @@ These charts indicate a very healthy and efficiently run training environment wh
 
 
 ---
+![iamge_9](img9.png)
 explain
 
 
